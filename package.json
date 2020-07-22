@@ -1,0 +1,11 @@
+{
+  "name": "yongtube",
+  "version": "1.0.0",
+  "description": "YongTube Vanilla and NodeJS",
+  "main": "index.js",
+  "author": "YongheeAn",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
