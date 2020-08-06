@@ -15,12 +15,12 @@ export const search = (req, res) => {
 export const getUpload = (req, res) =>
   res.render("upload", { pageTitle: "Upload" });
 
-//Upload & Save Video
+// Upload & Save video
 export const postUpload = (req, res) => {
   const {
     body: { file, title, description },
   } = req;
-  res.redirect(routes.videoDetail());
+  res.redirect(routes.videoDetail(324393));
 };
 
 export const videoDetail = (req, res) =>
