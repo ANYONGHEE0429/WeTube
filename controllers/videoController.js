@@ -1,4 +1,3 @@
-import { videos } from "../db";
 import routes from "../routes";
 
 export const home = (req, res) => {
@@ -20,7 +19,7 @@ export const postUpload = (req, res) => {
   const {
     body: { file, title, description },
   } = req;
-  res.redirect(routes.videoDetail(324393));
+  res.redirect(routes.videoDetail());
 };
 
 export const videoDetail = (req, res) =>

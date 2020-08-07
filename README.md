@@ -4,13 +4,13 @@ YongTube with Vanilla and NodeJS
 
 ## Pages:
 
-- [] Home
+- [x] Home
 - [x] Join
 - [x] Login
 - [x] Search
 - [] UserDetail
-- [] EditProfile
+- [x] EditProfile
 - [] ChangePassword
-- [] Upload
+- [x] Upload
 - [] VideoDetail
 - [] EditVideo
