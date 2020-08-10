@@ -1,1 +1,8 @@
 extends layouts/main
+
+blcok content
+    .video__player
+        video(src=`/${video.fileUrl}`)
+    .video__info
+        h5.video__title=video.title
+    .video__description=video.description
