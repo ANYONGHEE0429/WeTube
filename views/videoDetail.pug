@@ -4,5 +4,7 @@ blcok content
     .video__player
         video(src=`/${video.fileUrl}`)
     .video__info
+        a(href=routes.editVideo(video.id)) Edit video
         h5.video__title=video.title
-    .video__description=video.description
+        span.video__views=video.views
+        p.video__description=video.description 

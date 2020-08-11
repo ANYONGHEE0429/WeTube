@@ -2,8 +2,7 @@ extends layouts/main
 
 block content
     .form-container
-        form(action=routes.edit-video, method="post")
-            input(type="email", name="email", placeholder="email")
-            input(type="password", name="password", placeholder="password")
-            input(type="submit", value="Log In")
+    form(action=routes.editVideo(video.id), method="post")
+            input(type="text", placeholder="Title", name="title", value=video.title)
+            textarea(name="description", placeholder="Description")=video.description
         include partials/socialLogin
