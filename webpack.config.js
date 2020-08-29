@@ -1,12 +1,11 @@
 const path = require("path");
-
-// const ExtractCSS = require("extract-text-webpack-plugin");
-const MiniExtractCSS = require("mini-css-extract-plugin");
+const MiniExtractCss = require("mini-css-extract-plugin");
 const autoprefixer = require("autoprefixer");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const MODE = process.env.WEBPACK_ENV;
 const ENTRY_FILE = path.resolve(__dirname, "assets", "js", "main.js");
-const OUTPUT_DIR = path.resolve(__dirname, "static");
+const OUTPUT_DIR = path.join(__dirname, "static");
 
 const config = {
   entry: ["@babel/polyfill", ENTRY_FILE],
@@ -22,29 +21,25 @@ const config = {
         ],
       },
       {
-        test: /\.scss$/,
+        test: /\.(scss)$/,
         use: [
           {
-            loader: MiniExtractCSS.loader,
-            options: {
-              hmr: process.env.WEBPACK_ENV === "development",
-            },
+            loader: MiniCssExtractPlugin.loader,
           },
-          "css-loader",
+          {
+            loader: "css-loader",
+          },
           {
             loader: "postcss-loader",
             options: {
-              plugins() {
-                return [
-                  autoprefixer({
-                    overrideBrowserslist: "cover 99.5%",
-                  }),
-                ];
+              plugin() {
+                return [autoprefixer({ browsers: "cover 99.5%" })];
               },
             },
           },
-
-          "sass-loader",
+          {
+            loader: "sass-loader",
+          },
         ],
       },
     ],
@@ -53,11 +48,7 @@ const config = {
     path: OUTPUT_DIR,
     filename: "[name].js",
   },
-  plugins: [
-    new MiniExtractCSS({
-      filename: "styles.css",
-    }),
-  ],
+  plugins: [new MiniExtractCss({ filename: "styles.css" })],
 };
 
 module.exports = config;
