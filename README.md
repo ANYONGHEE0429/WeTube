@@ -1,6 +1,6 @@
-#YongTube
+#WeTube
 
-YongTube with Vanilla and NodeJS
+WeTube with Vanilla and NodeJS
 
 ## Pages:
 

@@ -13,7 +13,7 @@
       width: 100%;
       i {
         color: white;
-        font-size: 40px;
+        font-size: 30px;
       }
       &:nth-child(2) {
         justify-self: center;
@@ -23,6 +23,7 @@
       }
       ul {
         display: flex;
+        justify-content: flex-end;
         color: white;
         text-transform: uppercase;
         font-weight: 600;

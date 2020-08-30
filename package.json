@@ -1,7 +1,7 @@
 {
-  "name": "yongtube",
+  "name": "wetube",
   "version": "1.0.0",
-  "description": "YongTube Vanilla and NodeJS",
+  "description": "WeTube Vanilla and NodeJS",
   "main": "index.js",
   "author": "YongheeAn",
   "license": "ISC",
