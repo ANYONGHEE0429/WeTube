@@ -153,16 +153,28 @@ main {
   min-height: 70vh; }
 
 button,
-input {
+input,
+textarea {
   padding: 7px 10px;
   width: 100%;
+  border: none;
   border-radius: 5px;
   font-size: 14px;
   color: #444444;
+  max-width: 320px;
   font-weight: 600; }
   button::placeholder,
-  input::placeholder {
+  input::placeholder,
+  textarea::placeholder {
     color: rgba(0, 0, 0, 0.7); }
+
+button {
+  border: none;
+  background-color: #e74c3c;
+  color: white; }
+
+button.delete {
+  background-color: #bb2f2a; }
 
 .header {
   background-color: #ea232c;
@@ -238,9 +250,15 @@ input {
       box-shadow: rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
       .form-container form input:not(:last-child) {
         margin-bottom: 25px; }
+    .form-container form textarea {
+      box-shadow: rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      margin-top: 25px; }
     .form-container form input[type="submit"] {
       background-color: #e74c3c;
       color: white; }
+    .form-container form a {
+      max-width: 320px;
+      width: 100%; }
 
 .social-login {
   width: 100%;
@@ -264,4 +282,32 @@ input {
   .social-login .social-login--facebook {
     background-color: #3a5998;
     color: white; }
+
+.video-detail__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .video-detail__container .video__info {
+    width: 100%;
+    max-width: 850px;
+    margin-top: 25px; }
+    .video-detail__container .video__info button {
+      width: 100px;
+      margin-bottom: 15px; }
+    .video-detail__container .video__info .video__title,
+    .video-detail__container .video__info .video__views,
+    .video-detail__container .video__info .video__description {
+      display: block;
+      margin-bottom: 15px; }
+    .video-detail__container .video__info .video__title {
+      font-size: 22px;
+      font-weight: 300; }
+    .video-detail__container .video__info .video__views {
+      font-size: 14px; }
+    .video-detail__container .video__info .video__descritipn {
+      font-size: 16px; }
+  .video-detail__container .video__comments {
+    margin-top: 25px; }
+    .video-detail__container .video__comments .video__comments-number {
+      font-size: 18px; }
 
