@@ -4,7 +4,9 @@ import helmet from "helmet";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
 import passport from "passport";
+import mongoose from "mongoose";
 import session from "express-session";
+import MongoStore from "connect-mongo";
 import { localsMiddleware } from "./middlewares";
 import routes from "./routes";
 import userRouter from "./routers/userRouter";
@@ -14,9 +16,11 @@ import "./passport";
 
 var app = express();
 
+const CookieStore = MongoStore(session);
+
 app.use(helmet());
 app.set("view engine", "pug");
-app.use("/uploads", express.static("uploads")); //look for a file not any kind of controller, view
+app.use("/uploads", express.static("uploads"));
 app.use("/static", express.static("static"));
 app.use(cookieParser());
 app.use(bodyParser.json());
@@ -27,6 +31,7 @@ app.use(
     secret: process.env.COOKIE_SECRET,
     resave: true,
     saveUninitialized: false,
+    stor: new CookieStore({ mongooseConnection: mongoose.connection }),
   })
 );
 app.use(passport.initialize());
